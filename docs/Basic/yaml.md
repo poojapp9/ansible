@@ -177,10 +177,10 @@ metadata:
         - name: nginx-container
             image: nginx
             ports:
-            - containerPort: 80
+            -   containerPort: 80
             volumeMounts:
-            - name: nginx-vol
-              mountPath: /usr/nginx/html
+            -   name: nginx-vol
+                mountPath: /usr/nginx/html
         - name: sidecar-container
             image: some-image
             command: ["/bin/bash"]
@@ -215,10 +215,10 @@ metadata:
         - name: nginx-container
             image: nginx
             ports:
-            - containerPort: 80
+            -   containerPort: 80
             volumeMounts:
-            - name: nginx-vol
-              mountPath: /usr/nginx/html
+            -   name: nginx-vol
+                mountPath: /usr/nginx/html
         - name: sidecar-container
             image: some-image
             command: ["/bin/bash"]
