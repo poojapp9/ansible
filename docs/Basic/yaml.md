@@ -55,7 +55,7 @@
 If we have multiple `microservices` then we can list using -
 
 :   **{++1: list of Objects grouping++}**
-    
+:
         ```yaml
         microservice: # Object for Grouping
         -   app: "user-authentication"

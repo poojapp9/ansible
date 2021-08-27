@@ -570,15 +570,17 @@
 <dl>
 <dt>If we have multiple <code>microservices</code> then we can list using -</dt>
 <dd>
-<p><strong><ins class="critic">1: list of Objects grouping</ins></strong>
-    <code>yaml
-    microservice: # Object for Grouping
-    -   app: "user-authentication"
-        port: 9000
-        version: 1.7
-    -   app: "shopping-cart"
-        port: 9002
-        version: 1.9</code></p>
+<p><strong><ins class="critic">1: list of Objects grouping</ins></strong></p>
+<pre><code>```yaml
+microservice: # Object for Grouping
+-   app: "user-authentication"
+    port: 9000
+    version: 1.7
+-   app: "shopping-cart"
+    port: 9002
+    version: 1.9
+</code></pre>
+<p>```</p>
 </dd>
 <dd>
 <p><strong><ins class="critic">2: list of simple values (list of just microservice names)</ins></strong>
