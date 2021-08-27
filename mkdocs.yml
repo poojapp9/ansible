@@ -1,22 +1,17 @@
 site_name: Ansible
 theme:
-  name: null
-  custom_dir: mkdocs-material/material
-
-  # 404 page
-  static_templates:
-    - 404.html
-
-  # Necessary for search to work properly
-  include_search_page: false
-  search_index_only: true
-
-  # Default values, taken from mkdocs_theme.yml
-  language: en
+  name: material
+  features:
+    - navigation.tabs
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   font:
-    text: Roboto
-    code: Roboto Mono
-  favicon: assets/favicon.png
-  icon:
-    logo: logo
-
+    text: Poppins
+    code: Cascadia Code
