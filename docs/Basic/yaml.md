@@ -55,15 +55,15 @@
 If we have multiple `microservices` then we can list using -
 
 :   **{++1: list of Objects grouping ++}**
-        ```yaml
-        microservice: # Object for Grouping
-            -   app: "user-authentication"
-                port: 9000
-                version: 1.7
-            -   app: "shopping-cart"
-                port: 9002
-                version: 1.9
-        ```
+    ```yaml
+    microservice: # Object for Grouping
+    -   app: "user-authentication"
+        port: 9000
+        version: 1.7
+    -   app: "shopping-cart"
+        port: 9002
+        version: 1.9
+    ```
 :   **{++2: list of simple values (list of just microservice names)++}**
         ```yaml
         microservice: # Object for Grouping
