@@ -584,7 +584,7 @@
 <p><strong><ins class="critic">2: list of simple values (list of just microservice names)</ins></strong>
     <div class="highlight"><pre><span></span><code><span class="nt">microservice</span><span class="p">:</span> <span class="c1"># Object for Grouping</span>
 <span class="p p-Indicator">-</span>   <span class="l l-Scalar l-Scalar-Plain">user-authentication</span>
-<span class="p p-Indicator">-</span>    <span class="l l-Scalar l-Scalar-Plain">shopping-cart</span>
+<span class="p p-Indicator">-</span>   <span class="l l-Scalar l-Scalar-Plain">shopping-cart</span>
 </code></pre></div></p>
 </dd>
 <dd>
@@ -693,16 +693,16 @@
         <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
     <span class="nt">spec</span><span class="p">:</span>
         <span class="nt">containers</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-container</span>
-            <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
-            <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-container</span>
+            <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+            <span class="nt">ports</span><span class="p">:</span>
             <span class="p p-Indicator">-</span>   <span class="nt">containerPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
             <span class="nt">volumeMounts</span><span class="p">:</span>
             <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-vol</span>
                 <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/nginx/html</span>
-        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sidecar-container</span>
-            <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some-image</span>
-            <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/bash&quot;</span><span class="p p-Indicator">]</span>
+        <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sidecar-container</span>
+            <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">some-image</span>
+            <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/bash&quot;</span><span class="p p-Indicator">]</span>
             <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;echo</span><span class="nv"> </span><span class="s">Hello</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">sidecar-container;</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">300&quot;</span><span class="p p-Indicator">]</span>
 <span class="nn">---</span>
 <span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
@@ -711,11 +711,11 @@
     <span class="nt">name</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.name</span> <span class="p p-Indicator">}}</span>
 <span class="nt">spec</span><span class="p">:</span>
     <span class="nt">selector</span><span class="p">:</span>
-         <span class="nt">app</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.app</span> <span class="p p-Indicator">}}</span>
+        <span class="nt">app</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.app</span> <span class="p p-Indicator">}}</span>
     <span class="nt">ports</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span>    <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
-         <span class="nt">port</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.port</span> <span class="p p-Indicator">}}</span>
-         <span class="nt">targetPort</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.targetport</span> <span class="p p-Indicator">}}</span>
+    <span class="p p-Indicator">-</span>   <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.port</span> <span class="p p-Indicator">}}</span>
+        <span class="nt">targetPort</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">.Values.service.targetport</span> <span class="p p-Indicator">}}</span>
 </code></pre></div></dd>
 </dl>
 <hr />
@@ -729,16 +729,16 @@
         <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
     <span class="nt">spec</span><span class="p">:</span>
         <span class="nt">containers</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-container</span>
-            <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
-            <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-container</span>
+            <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+            <span class="nt">ports</span><span class="p">:</span>
             <span class="p p-Indicator">-</span>   <span class="nt">containerPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
             <span class="nt">volumeMounts</span><span class="p">:</span>
             <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-vol</span>
                 <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/nginx/html</span>
-        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sidecar-container</span>
-            <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some-image</span>
-            <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/bash&quot;</span><span class="p p-Indicator">]</span>
+        <span class="p p-Indicator">-</span>   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sidecar-container</span>
+            <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">some-image</span>
+            <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/bash&quot;</span><span class="p p-Indicator">]</span>
             <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;-c&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;echo</span><span class="nv"> </span><span class="s">Hello</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">sidecar-container;</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">300&quot;</span><span class="p p-Indicator">]</span>
 </code></pre></div></dd>
 </dl>
