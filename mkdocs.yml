@@ -15,3 +15,25 @@ theme:
   font:
     text: Poppins
     code: Cascadia Code
+plugins:
+    - search
+    
+markdown_extensions:
+  - abbr
+  - pymdownx.mark
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - def_list
+  - pymdownx.smartsymbols
+  - pymdownx.critic
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
