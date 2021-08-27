@@ -571,17 +571,17 @@
 <dt>If we have multiple <code>microservices</code> then we can list using -</dt>
 <dd>
 <p><strong><ins class="critic">1: list of Objects grouping</ins></strong></p>
-<pre><code>```yaml
-microservice: # Object for Grouping
--   app: "user-authentication"
-    port: 9000
-    version: 1.7
--   app: "shopping-cart"
-    port: 9002
-    version: 1.9
-</code></pre>
-<p>```</p>
 </dd>
+<dt>:</dt>
+<dt>        ```yaml</dt>
+<dt>        microservice: # Object for Grouping</dt>
+<dt>        -   app: "user-authentication"</dt>
+<dt>            port: 9000</dt>
+<dt>            version: 1.7</dt>
+<dt>        -   app: "shopping-cart"</dt>
+<dt>            port: 9002</dt>
+<dt>            version: 1.9</dt>
+<dt>       ```</dt>
 <dd>
 <p><strong><ins class="critic">2: list of simple values (list of just microservice names)</ins></strong>
     <div class="highlight"><pre><span></span><code><span class="nt">microservice</span><span class="p">:</span> <span class="c1"># Object for Grouping</span>
