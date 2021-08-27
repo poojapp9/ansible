@@ -69,7 +69,7 @@ If we have multiple `microservices` then we can list using -
         ```yaml
         microservice: # Object for Grouping
         -   user-authentication
-        -    shopping-cart
+        -   shopping-cart
         ```
 
 :   **{++3: list of lists (we can create list of list using)++}**
@@ -174,14 +174,14 @@ metadata:
         app: nginx
     spec:
         containers:
-        - name: nginx-container
+        -   name: nginx-container
             image: nginx
             ports:
             -   containerPort: 80
             volumeMounts:
             -   name: nginx-vol
                 mountPath: /usr/nginx/html
-        - name: sidecar-container
+        -   name: sidecar-container
             image: some-image
             command: ["/bin/bash"]
             args: ["-c", "echo Hello from the sidecar-container; sleep 300"]
@@ -192,11 +192,11 @@ metadata:
     name: {{ .Values.service.name }}
 spec:
     selector:
-         app: {{ .Values.service.app }}
+        app: {{ .Values.service.app }}
     ports:
-    -    protocol: TCP
-         port: {{ .Values.service.port }}
-         targetPort: {{ .Values.service.targetport }}
+    -   protocol: TCP
+        port: {{ .Values.service.port }}
+        targetPort: {{ .Values.service.targetport }}
 ```
 
 ---
@@ -212,14 +212,14 @@ metadata:
         app: nginx
     spec:
         containers:
-        - name: nginx-container
+        -   name: nginx-container
             image: nginx
             ports:
             -   containerPort: 80
             volumeMounts:
             -   name: nginx-vol
                 mountPath: /usr/nginx/html
-        - name: sidecar-container
+        -   name: sidecar-container
             image: some-image
             command: ["/bin/bash"]
             args: ["-c", "echo Hello from the sidecar-container; sleep 300"]
