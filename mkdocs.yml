@@ -17,7 +17,10 @@ theme:
     code: Cascadia Code
 plugins:
     - search
-    
+nav:
+  - Home: index.md
+  - Basic:
+    - YAML: Basic/yaml.md
 markdown_extensions:
   - abbr
   - pymdownx.mark
